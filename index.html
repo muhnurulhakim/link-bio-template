@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website pribadi seorang konten kreator non-tech. Berisi link aktif ke profil sosial media dan produk jualan.">
+    <title>Nama Saya - Konten Kreator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background-color-light: #ffffff;
+            --background-color-dark: #333333;
+            --text-color-light: #333333;
+            --text-color-dark: #ffffff;
+            --link-color-light: #0066cc;
+            --link-color-dark: #66b2ff;
+            --hover-background-color-light: #0066cc;
+            --hover-background-color-dark: #66b2ff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color-light);
+            color: var(--text-color-light);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode {
+            background-color: var(--background-color-dark);
+            color: var(--text-color-dark);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        .toggle-theme-container {
+            position: absolute;
+            top: -40px;
+            right: 10px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .toggle-theme-text {
+            margin-right: 10px;
+            font-size: 0.9em;
+            color: var(--link-color-light);
+        }
+
+        body.dark-mode .toggle-theme-text {
+            color: var(--link-color-dark);
+        }
+
+        .toggle-theme {
+            border: none;
+            background: none;
+        }
+
+        .toggle-theme img {
+            width: 30px;
+            height: 30px;
+        }
+
+        main {
+            text-align: center;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a {
+            color: var(--link-color-light);
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid var(--link-color-light);
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode a {
+            color: var(--link-color-dark);
+            border-color: var(--link-color-dark);
+        }
+
+        a:hover {
+            color: #ffffff;
+            background-color: var(--hover-background-color-light);
+        }
+
+        body.dark-mode a:hover {
+            color: #333333;
+            background-color: var(--hover-background-color-dark);
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="toggle-theme-container" onclick="toggleTheme()">
+            <span class="toggle-theme-text">Pilih Tampilan:</span>
+            <button class="toggle-theme">
+                <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon">
+            </button>
+        </div>
+        <h1>Nama Saya - Konten Kreator</h1>
+    </header>
+    <main>
+        <p>Ikuti saya di sosial media dan lihat produk jualan saya!</p>
+        <div class="link-container">
+            <a href="https://www.instagram.com/username" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/username" target="_blank">YouTube</a>
+            <a href="https://www.twitter.com/username" target="_blank">Twitter</a>
+            <a href="https://www.tokopedia.com/username" target="_blank">Tokopedia</a>
+            <a href="https://www.shopee.co.id/username" target="_blank">Shopee</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nama Saya</p>
+    </footer>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
+            } else {
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
+            }
+        }
+    </script>
+</body>
+</html>
