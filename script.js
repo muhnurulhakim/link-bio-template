@@ -1,16 +1,22 @@
-function toggleTheme() {
-    const body = document.body;
+document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
-    body.classList.toggle('dark-mode');
-
-    if (body.classList.contains('dark-mode')) {
+    
+    // Check for saved theme preference or default to light theme
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
         themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
-        themeIcon.alt = 'Moon icon';
-    } else {
-        themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
-        themeIcon.alt = 'Sun icon';
     }
-}
 
-// Tambahkan event listener untuk tombol toggle tema
-document.querySelector('.toggle-theme-container').addEventListener('click', toggleTheme);
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        
+        if (document.body.classList.contains('dark-mode')) {
+            themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
