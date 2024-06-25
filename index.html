@@ -68,10 +68,8 @@
             align-items: center;
             cursor: pointer;
             z-index: 1000; /* Pastikan z-index lebih tinggi dari konten utama */
-            background-color: rgba(0, 0, 0, 0.5); /* Tambahkan latar belakang semi-transparan */
             padding: 10px;
             border-radius: 50%; /* Bulatkan tombol */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek melayang */
         }
 
         .toggle-theme-text {
@@ -181,7 +179,7 @@
     </main>
     <footer>
         <div class="toggle-theme-container" onclick="toggleTheme()">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/sun.png" alt="Toggle Theme" id="theme-icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon">
         </div>
         <p>&copy; 2024 Muhnurulhakim</p>
     </footer>
@@ -194,7 +192,7 @@
             if (body.classList.contains('dark-mode')) {
                 themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
             } else {
-                themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/sun.png';
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
             }
         }
     </script>
