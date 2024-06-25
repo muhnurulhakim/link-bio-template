@@ -69,14 +69,17 @@
         }
 
         .toggle-theme-container {
-            position: absolute; /* Gunakan absolute positioning */
-            bottom: 20px; /* Sesuaikan posisi */
-            right: 20px; /* Sesuaikan posisi */
             display: flex;
             align-items: center;
+            justify-content: center; /* Pusatkan secara horizontal */
             cursor: pointer;
             z-index: 9999; /* Pastikan z-index lebih tinggi dari konten utama */
             padding: 10px;
+            position: absolute; /* Gunakan absolute positioning */
+            bottom: 30px; /* Sesuaikan posisi */
+            left: 50%; /* Pusatkan secara horizontal */
+            transform: translateX(-50%); /* Geser ke kiri 50% dari lebar container */
+            background-color: transparent; /* Hapus background warna */
         }
 
         .toggle-theme-text {
@@ -153,7 +156,7 @@
             left: 0;
             width: 100%;
             text-align: center;
-            padding: 20px 0; /* Padding atas dan bawah 20px */
+            padding: 40px 20px; /* Padding atas dan bawah 20px */
         }
 
         .copyright {
@@ -171,12 +174,20 @@
 
             .toggle-theme-container {
                 bottom: 30px; /* Sesuaikan posisi pada layar kecil */
-                right: 50px; /* Sesuaikan posisi pada layar kecil */
+                left: 50%; /* Pusatkan ikon di tengah */
+                transform: translateX(-50%); /* Geser ke kiri 50% dari lebar container */
+                position: absolute; /* Gunakan absolute positioning */
             }
 
             a {
                 width: 100%; /* Buat tombol memenuhi lebar layar */
                 max-width: 300px; /* Batasi lebar maksimal tombol */
+            }
+        }
+
+        @media (min-width: 769px) {
+            footer {
+                padding-top: 60px; /* Berikan ruang atas agar tidak tumpang tindih dengan ikon toggle */
             }
         }
     </style>
