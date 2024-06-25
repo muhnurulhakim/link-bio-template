@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website pribadi seorang konten kreator non-tech. Berisi link aktif ke profil sosial media dan produk jualan.">
-    <title>Nama Saya - Konten Kreator</title>
+    <meta name="description" content="Rekomendasi link untuk Konten Kreator yang ingin bertumbuh.">
+    <title>Muhnurulhakim • Konten Kreator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,8 +14,8 @@
             --text-color-dark: #ffffff;
             --link-color-light: #0066cc;
             --link-color-dark: #66b2ff;
-            --hover-background-color-light: #0066cc;
-            --hover-background-color-dark: #66b2ff;
+            --hover-background-color-light: #333333;
+            --hover-background-color-dark: #ffffff; /* Ubah warna hover menjadi putih di mode gelap */
         }
 
         body {
@@ -30,6 +30,7 @@
             align-items: center;
             min-height: 100vh;
             transition: all 0.3s ease;
+            position: relative; /* Tambahkan ini untuk footer absolute positioning */
         }
 
         body.dark-mode {
@@ -41,20 +42,36 @@
             text-align: center;
             margin-bottom: 20px;
             position: relative;
-            padding: 0 20px;
+            padding: 20px 0; /* Padding atas dan bawah 20px */
         }
 
         header h1 {
-            font-size: 2em;
+            font-size: 1.7em;
+        }
+
+        header h2 {
+            font-size: 1.3em;
+        }
+
+        .avatar {
+            margin-bottom: 20px; /* Ubah margin-bottom menjadi 20px */
+            width: 100px; /* Sesuaikan ukuran avatar */
+            height: auto;
+            border-radius: 50%;
         }
 
         .toggle-theme-container {
-            position: absolute;
-            top: -40px;
-            right: 10px;
+            position: fixed; /* Ubah menjadi fixed untuk melayang */
+            bottom: 20px; /* Sesuaikan posisi */
+            right: 20px; /* Sesuaikan posisi */
             display: flex;
             align-items: center;
             cursor: pointer;
+            z-index: 1000; /* Pastikan z-index lebih tinggi dari konten utama */
+            background-color: rgba(0, 0, 0, 0.5); /* Tambahkan latar belakang semi-transparan */
+            padding: 10px;
+            border-radius: 50%; /* Bulatkan tombol */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek melayang */
         }
 
         .toggle-theme-text {
@@ -70,16 +87,19 @@
         .toggle-theme {
             border: none;
             background: none;
+            padding: 0;
+            margin: 0;
         }
 
         .toggle-theme img {
-            width: 30px;
-            height: 30px;
+            width: 25px; /* Ukuran ikon fleksibel untuk diubah */
+            height: 25px; /* Biarkan tinggi ikon otomatis menyesuaikan */
         }
 
         main {
             text-align: center;
             padding: 0 20px;
+            margin-bottom: 100px; /* Tambahkan margin bottom yang lebih besar */
         }
 
         .link-container {
@@ -89,10 +109,14 @@
             gap: 10px;
         }
 
+        .link-container p {
+            text-align: center;
+        }
+
         a {
             color: var(--link-color-light);
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1em;
             padding: 10px 20px;
             border: 2px solid var(--link-color-light);
             border-radius: 5px;
@@ -113,44 +137,53 @@
 
         body.dark-mode a:hover {
             color: #333333;
-            background-color: var(--hover-background-color-dark);
+            background-color: var(--hover-background-color-dark); /* Ubah warna hover menjadi putih di mode gelap */
         }
 
         footer {
-            margin-top: 20px;
+            position: absolute; /* Tambahkan ini untuk absolute positioning */
+            bottom: 0;
+            left: 0;
+            width: 100%;
             text-align: center;
-            padding: 0 20px;
+            padding: 20px 0; /* Padding atas dan bawah 20px */
         }
 
         @media (max-width: 768px) {
             header, main, footer {
                 padding: 0 20px;
             }
+
+            .avatar {
+                margin-bottom: 10px; /* Kembalikan margin-bottom pada avatar untuk layar kecil */
+            }
+
+            .toggle-theme-container {
+                bottom: 30px; /* Sesuaikan posisi pada layar kecil */
+                right: 30px; /* Sesuaikan posisi pada layar kecil */
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="toggle-theme-container" onclick="toggleTheme()">
-            <span class="toggle-theme-text">Pilih Tampilan:</span>
-            <button class="toggle-theme">
-                <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon">
-            </button>
-        </div>
-        <h1>Nama Saya - Konten Kreator</h1>
+        <img src="avatar-hakim.png" alt="Avatar Hakim" class="avatar">
+        <h1>Muhnurulhakim's Page</h1>
     </header>
     <main>
-        <p>Ikuti saya di sosial media dan lihat produk jualan saya!</p>
         <div class="link-container">
-            <a href="https://www.instagram.com/username" target="_blank">Instagram</a>
-            <a href="https://www.youtube.com/username" target="_blank">YouTube</a>
-            <a href="https://www.twitter.com/username" target="_blank">Twitter</a>
-            <a href="https://www.tokopedia.com/username" target="_blank">Tokopedia</a>
-            <a href="https://www.shopee.co.id/username" target="_blank">Shopee</a>
+            <p>Apa yang bisa ku bantu?</p>
+            <a href="https://muhnurulhakim.myr.id/catalog/private-class-jadi-storyteller-kreatif-dalam-30-hari" target="_blank">Private Class: Jadi Storyteller Kreatif dalam 30 Hari!</a>
+            <a href="https://muhnurulhakim.beehiiv.com/subscribe" target="_blank">Cara Jadi Konten Kreator Kreatif!</a>
+            <a href="https://muhnurulhakim.myr.id/catalog/kelas-online-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank">Kelas Online Gambar AI</a>
+            <a href="https://muhnurulhakim.myr.id/ebook/ebook-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank">Ebook Bikin Gambar AI</a>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Nama Saya</p>
+        <div class="toggle-theme-container" onclick="toggleTheme()">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/sun.png" alt="Toggle Theme" id="theme-icon">
+        </div>
+        <p>&copy; 2024 Muhnurulhakim</p>
     </footer>
     <script>
         function toggleTheme() {
@@ -161,7 +194,7 @@
             if (body.classList.contains('dark-mode')) {
                 themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
             } else {
-                themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
+                themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/sun.png';
             }
         }
     </script>
