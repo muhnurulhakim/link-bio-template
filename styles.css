@@ -7,6 +7,8 @@
     --link-color-dark: #66b2ff;
     --hover-background-color-light: #f0f0f0;
     --hover-background-color-dark: #333333;
+    --toggle-background-light: #333333;
+    --toggle-background-dark: #ffffff;
 }
 
 * {
@@ -55,7 +57,7 @@ header {
 
 h1 {
     font-size: 1.5em;
-    margin-bottom: 5px;
+    margin-bottom: 15px; /* Increased margin to add space */
 }
 
 main {
@@ -108,15 +110,24 @@ footer {
 }
 
 #theme-toggle {
-    background: none;
+    background: var(--toggle-background-light);
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode #theme-toggle {
+    background: var(--toggle-background-dark);
 }
 
 #theme-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     transition: filter 0.3s;
 }
 
@@ -136,6 +147,7 @@ body.dark-mode #theme-icon {
 
     h1 {
         font-size: 1.3em;
+        margin-bottom: 10px; /* Adjusted for smaller screens */
     }
 
     a {
