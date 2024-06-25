@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Rekomendasi link untuk Konten Kreator yang ingin bertumbuh.">
     <title>Links • Muhnurulhakim</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload font -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"></noscript>
 
     <!-- Metadata untuk preview di media sosial -->
     <meta property="og:title" content="Links • Muhnurulhakim">
@@ -14,216 +17,31 @@
     <meta property="og:url" content="https://hakim.orderio.my.id/link-bio-template/">
     <meta name="twitter:card" content="summary_large_image">
 
-    <style>
-        :root {
-            --background-color-light: #ffffff;
-            --background-color-dark: #333333;
-            --text-color-light: #333333;
-            --text-color-dark: #ffffff;
-            --link-color-light: #0066cc;
-            --link-color-dark: #66b2ff;
-            --hover-background-color-light: #333333;
-            --hover-background-color-dark: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-color-light);
-            color: var(--text-color-light);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden; /* Hilangkan scroll horizontal */
-            position: relative; /* Tambahkan ini untuk footer absolute positioning */
-        }
-
-        body.dark-mode {
-            background-color: var(--background-color-dark);
-            color: var(--text-color-dark);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-            position: relative;
-            padding: 20px 0; /* Padding atas dan bawah 20px */
-        }
-
-        header h1 {
-            font-size: 1.7em;
-        }
-
-        header h2 {
-            font-size: 1.3em;
-        }
-
-        .avatar {
-            margin-bottom: 20px; /* Ubah margin-bottom menjadi 20px */
-            width: 100px; /* Sesuaikan ukuran avatar */
-            height: auto;
-            border-radius: 50%;
-        }
-
-        .toggle-theme-container {
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Pusatkan secara horizontal */
-            cursor: pointer;
-            z-index: 1; /* Pastikan z-index lebih tinggi dari konten utama */
-            padding: 10px;
-            position: absolute; /* Gunakan absolute positioning */
-            bottom: 60px; /* Sesuaikan posisi */
-            left: 50%; /* Pusatkan secara horizontal */
-            transform: translateX(-50%); /* Geser ke kiri 50% dari lebar container */
-            background-color: transparent; /* Hapus background warna */
-        }
-
-        .toggle-theme-text {
-            margin-right: 10px;
-            font-size: 0.9em;
-            color: var(--link-color-light);
-        }
-
-        body.dark-mode .toggle-theme-text {
-            color: var(--link-color-dark);
-        }
-
-        .toggle-theme {
-            border: none;
-            background: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .toggle-theme img {
-            width: 25px; /* Ukuran ikon fleksibel untuk diubah */
-            height: 25px; /* Biarkan tinggi ikon otomatis menyesuaikan */
-        }
-
-        main {
-            text-align: center;
-            padding: 0 20px;
-            margin-bottom: 100px; /* Tambahkan margin bottom yang lebih besar */
-            width: 100%; /* Tambahkan width 100% */
-        }
-
-        .link-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .link-container p {
-            text-align: center;
-        }
-
-        a {
-            color: var(--link-color-light);
-            text-decoration: none;
-            font-size: 1em;
-            padding: 10px 20px;
-            border: 2px solid var(--link-color-light);
-            border-radius: 5px;
-            width: 200px;
-            text-align: center;
-            transition: all 0.3s ease;
-            margin: 0 auto; /* Tambahkan margin auto untuk pusatkan */
-        }
-
-        body.dark-mode a {
-            color: var(--link-color-dark);
-            border-color: var(--link-color-dark);
-        }
-
-        a:hover {
-            color: #ffffff;
-            background-color: var(--hover-background-color-light);
-        }
-
-        body.dark-mode a:hover {
-            color: #333333;
-            background-color: var(--hover-background-color-dark); /* Ubah warna hover menjadi putih di mode gelap */
-        }
-
-        footer {
-            position: absolute; /* Tambahkan ini untuk absolute positioning */
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            padding: 60px 20px 40px; /* Padding atas, bawah, kiri, kanan */
-        }
-
-        .copyright {
-            font-size: 0.8em;
-        }
-
-        @media (max-width: 768px) {
-            header, main, footer {
-                padding: 0 20px;
-            }
-
-            .avatar {
-                margin-bottom: 10px; /* Kembalikan margin-bottom pada avatar untuk layar kecil */
-            }
-
-            .toggle-theme-container {
-                bottom: 30px; /* Sesuaikan posisi pada layar kecil */
-                left: 50%; /* Pusatkan ikon di tengah */
-                transform: translateX(-50%); /* Geser ke kiri 50% dari lebar container */
-                position: absolute; /* Gunakan absolute positioning */
-            }
-
-            a {
-                width: 100%; /* Buat tombol memenuhi lebar layar */
-                max-width: 300px; /* Batasi lebar maksimal tombol */
-            }
-        }
-
-        @media (min-width: 769px) {
-            footer {
-                padding-top: 60px; /* Berikan ruang atas agar tidak tumpang tindih dengan ikon toggle */
-            }
-        }
-    </style>
+    <!-- Eksternal CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <img src="https://hakim.orderio.my.id/link-bio-template/avatar-hakim.png" alt="Avatar Hakim" class="avatar">
-        <h1>Muhnurulhakim's Page</h1>
-    </header>
-    <main>
-        <div class="link-container">
+    <div class="container">
+        <header>
+            <img src="https://hakim.orderio.my.id/link-bio-template/avatar-hakim.png" alt="Avatar Hakim" class="avatar" loading="lazy">
+            <h1>Muhnurulhakim's Page</h1>
             <p>Apa yang bisa ku bantu?</p>
-            <a href="https://muhnurulhakim.myr.id/catalog/private-class-jadi-storyteller-kreatif-dalam-30-hari" target="_blank">Private Class: Jadi Storyteller Kreatif dalam 30 Hari!</a>
-            <a href="https://muhnurulhakim.beehiiv.com/subscribe" target="_blank">Cara Jadi Konten Kreator Kreatif!</a>
-            <a href="https://muhnurulhakim.myr.id/catalog/kelas-online-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank">Kelas Online Gambar AI</a>
-            <a href="https://muhnurulhakim.myr.id/ebook/ebook-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank">Ebook Bikin Gambar AI</a>
-        </div>
-    </main>
-    <footer>
-        <p class="copyright">&copy; 2024 Muhnurulhakim</p>
-        <div class="toggle-theme-container" onclick="toggleTheme()">
-            <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Toggle Theme" id="theme-icon">
-        </div>
-    </footer>
-    <script>
-        function toggleTheme() {
-            const body = document.body;
-            const themeIcon = document.getElementById('theme-icon');
-            body.classList.toggle('dark-mode');
-
-            if (body.classList.contains('dark-mode')) {
-                themeIcon.src = 'https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png';
-            } else {
-                themeIcon.src = 'https://img.icons8.com/ios-filled/50/000000/sun.png';
-            }
-        }
-    </script>
+        </header>
+        <main>
+            <div class="link-container">
+                <a href="https://muhnurulhakim.myr.id/catalog/private-class-jadi-storyteller-kreatif-dalam-30-hari" target="_blank" rel="noopener noreferrer">Private Class: Jadi Storyteller Kreatif dalam 30 Hari!</a>
+                <a href="https://muhnurulhakim.beehiiv.com/subscribe" target="_blank" rel="noopener noreferrer">Cara Jadi Konten Kreator Kreatif!</a>
+                <a href="https://muhnurulhakim.myr.id/catalog/kelas-online-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank" rel="noopener noreferrer">Kelas Online Gambar AI</a>
+                <a href="https://muhnurulhakim.myr.id/ebook/ebook-rahasia-kreasi-konten-ai-tanpa-batas-untuk-pemula" target="_blank" rel="noopener noreferrer">Ebook Bikin Gambar AI</a>
+            </div>
+        </main>
+        <footer>
+            <p class="copyright">&copy; 2024 Muhnurulhakim</p>
+            <button class="toggle-theme-container" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <img src="https://img.icons8.com/ios-filled/50/000000/sun.png" alt="Theme icon" id="theme-icon">
+            </button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
