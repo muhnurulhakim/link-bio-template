@@ -38,7 +38,6 @@
             align-items: center;
             min-height: 100vh;
             overflow-x: hidden; /* Hilangkan scroll horizontal */
-            transition: all 0.3s ease;
             position: relative; /* Tambahkan ini untuk footer absolute positioning */
         }
 
@@ -76,7 +75,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            z-index: 1000; /* Pastikan z-index lebih tinggi dari konten utama */
+            z-index: 9999; /* Pastikan z-index lebih tinggi dari konten utama */
             padding: 10px;
             border-radius: 50%; /* Bulatkan tombol */
         }
@@ -106,7 +105,7 @@
         main {
             text-align: center;
             padding: 0 20px;
-            margin-bottom: 100px; /* Tambahkan margin bottom yang lebih besar */
+            margin-bottom: 120px; /* Tambahkan margin bottom yang lebih besar */
             width: 100%; /* Tambahkan width 100% */
         }
 
