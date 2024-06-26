@@ -128,11 +128,11 @@ body.dark-mode #theme-toggle {
 #theme-icon {
     width: 20px;
     height: 20px;
-    transition: filter 0.3s;
 }
 
+/* Hapus filter invert pada dark mode */
 body.dark-mode #theme-icon {
-    filter: invert(1);
+    filter: none;
 }
 
 @media (max-height: 600px) {
