@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             themeIcon.src = 'https://img.icons8.com/ios-filled/50/fff/moon-symbol.png';
             localStorage.setItem('theme', 'dark');
         } else {
-            themeIcon.src = 'https://img.icons8.com/ios-filled/50/000/sun.png';
+            themeIcon.src = 'https://img.icons8.com/ios-filled/50/fff/sun.png';
             localStorage.setItem('theme', 'light');
         }
     });
