@@ -5,6 +5,10 @@
     --text-color-dark: #ffffff;
     --link-color-light: #0066cc;
     --link-color-dark: #66b2ff;
+    --hover-background-color-light: #f0f0f0;
+    --hover-background-color-dark: #333333;
+    --toggle-background-light: #333333;
+    --toggle-background-dark: #ffffff;
 }
 
 * {
@@ -25,10 +29,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* body.dark-mode {
+body.dark-mode {
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
-} */
+}
 
 .container {
     max-width: 400px;
